@@ -1,0 +1,8 @@
+#!/bin/sh
+set -ex
+
+confd -onetime -backend env
+
+/opt/alertmanager-webhook-servicenow/alertmanager-webhook-servicenow \
+  --config.file='/opt/awr/configuration.yaml' \
+  --web.listen-address="0.0.0.0:9876"
