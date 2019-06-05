@@ -3,6 +3,8 @@ service_now:
   user_name: "{{getenv "AWSN_SERVICE_NOW_USER_NAME"}}"
   password: "{{getenv "AWSN_SERVICE_NOW_PASSWORD"}}"
 default_incident:
+  company: {{getenv "AWSN_DEFAULT_INCIDENT_COMPANY"}}
+  contact_type: {{getenv "AWSN_DEFAULT_INCIDENT_CONTACT_TYPE"}}
   assignment_group: "{{getenv "AWSN_DEFAULT_INCIDENT_ASSIGNMENT_GROUP"}}"
   impact: {{getenv "AWSN_DEFAULT_INCIDENT_IMPACT"}}
   urgency: {{getenv "AWSN_DEFAULT_INCIDENT_URGENCY"}}
