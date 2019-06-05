@@ -1,6 +1,6 @@
 FROM golang:1.12 as builder
 
-ENV ALERTMANAGER_WEBHOOK_SERVICENOW_VERSION="0.1.0"
+ENV ALERTMANAGER_WEBHOOK_SERVICENOW_VERSION="0.2.0"
 
 WORKDIR /go/src/github.com/FXinnovation/alertmanager-webhook-servicenow
 
@@ -21,7 +21,7 @@ ENV AWSN_SERVICE_NOW_INSTANCE_NAME="servicenow.example.com" \
     AWSN_DEFAULT_INCIDENT_IMPACT="2" \
     AWSN_DEFAULT_INCIDENT_URGENCY="2" \
     CA_CERTIFICATES_VERSION="20180409" \
-    ALERTMANAGER_WEBHOOK_SERVICENOW_VERSION="0.1.0" \
+    ALERTMANAGER_WEBHOOK_SERVICENOW_VERSION="0.2.0" \
     CONFD_VERSION="0.16.0"
 
 COPY --from=builder /go/src/github.com/FXinnovation/alertmanager-webhook-servicenow/alertmanager-webhook-servicenow /alertmanager-webhook-servicenow
