@@ -1,7 +1,7 @@
 #!/bin/sh
 set -ex
 
-confd -onetime -backend env
+confd -onetime -backend file -file ${AWSN_CONFIGURATION_FILE}
 
 /opt/alertmanager-webhook-servicenow/alertmanager-webhook-servicenow \
   --config.file='/opt/alertmanager-webhook-servicenow/configuration.yaml' \
