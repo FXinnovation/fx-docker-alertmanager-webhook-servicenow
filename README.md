@@ -13,3 +13,16 @@ docker run \
   -p <PORT>:9876 \
   fxinnovation/awsn:<TAG>
 ```
+
+### Format of config file
+The YAML configuration file referenced by `<PATH-TO-CONFIG>` must have the following format
+
+```
+configuration: |-
+  workflow:
+    ...
+  default_incident:
+    ...
+```
+
+See [alertmanager-webhook-servicenow](https://github.com/FXinnovation/alertmanager-webhook-servicenow) for all available fields.
