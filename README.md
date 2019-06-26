@@ -7,12 +7,14 @@ alertmanager-webhook-servicenow in a container
 ```
 docker run \
   -v <PATH-TO-CONFIG>:/data/configuration.yaml \
-  -e AWSN_SERVICE_NOW_INSTANCE_NAME="servicenow.example.com" \
+  -e AWSN_SERVICE_NOW_INSTANCE_NAME="instance_name" \
   -e AWSN_SERVICE_NOW_USER_NAME="example" \
   -e AWSN_SERVICE_NOW_PASSWORD="example" \
   -p <PORT>:9876 \
   fxinnovation/awsn:<TAG>
 ```
+
+where `AWSN_SERVICE_NOW_INSTANCE_NAME` is the "instance_name" part of the ServiceNow URL (e.g.: https://instance_name.service-now.com)
 
 ### Format of config file
 The YAML configuration file referenced by `<PATH-TO-CONFIG>` must have the following format
